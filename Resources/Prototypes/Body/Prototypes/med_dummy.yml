@@ -1,0 +1,10 @@
+﻿- type: body
+  id: MedicalDummy
+  name: Medic Dummy
+  root: torso
+  slots:
+    torso:
+      part: TorsoHuman
+      organs:
+        heart: PracticeOrganMain
+        lung: PracticeOrganLung

@@ -1,0 +1,30 @@
+﻿- type: entity
+  id: PracticeOrganMain
+  parent: BaseHumanOrgan
+  name: Medical Dummy Core
+  description: "The core of a medical dummy. This simulates thow an average humanoid would react to medicines."
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    state: heart-on
+  - type: Organ
+  - type: Metabolizer
+    maxReagents: 3
+    metaboliserTypes: [Human]
+    groups:
+    - id: Medicine
+    - id: Poision
+    - id: Narcotic
+    - id: Food
+    - id: Drink
+    removeEmtpy: True
+    #Adding a custom tag allows this in the building 
+  - type: Tag
+    tags:
+      - MedicalDummyOrgan
+      
+- type: entity
+  id: PracticeOrganLung
+  parent: OrganHumanLungs
+  name: Medical Dummy Air Processor
+  description: "A mix of machines and organic components. This lung processes air, moving it into the bloodstream."

@@ -139,3 +139,28 @@
       - !type:AdjustReagent
         reagent: Nutriment
         amount: 0.1
+        
+- type: reagent
+  id: SynthBlood
+  name: reagent-name-synthblood
+  group: Biological
+  desc: reagent-desk-synthblood
+  flavor: sour
+  color: "#183652"
+  physicalDesc: reagent-physical-desc-acidic
+  slippery: false
+  metabolisms:
+    Drink:
+      # Acidic
+      effects:
+      - !type:SatiateThirst
+        factor: -1
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Caustic: 2
+      - !type:Emote
+        emote: Scream
+        probability: 0.2

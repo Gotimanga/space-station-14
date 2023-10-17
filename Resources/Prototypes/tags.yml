@@ -719,6 +719,9 @@
   id: Medkit
 
 - type: Tag
+  id: MedicalDummyOrgan
+
+- type: Tag
   id: Metal
 
 - type: Tag

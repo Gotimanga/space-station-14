@@ -1,0 +1,86 @@
+- type: constructionGraph
+  id: MedDummy
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: wiring
+          steps:
+            - material: Steel
+              amount: 4
+              doAfter: 3
+            - material: Cloth
+              amount: 3
+              doAfter: 3
+    
+    
+    - node: wiring
+      entity: MedDummyPartial
+      edges:
+        - to: organs
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 3
+            - material: Cable
+              amount: 5
+              doAfter: 4
+              
+            - tool: Screwing
+              doAfter: 3
+              
+        - to: start
+          steps:
+            - tool: Prying
+              doAfter: 5
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel
+              amount: 4 #returns 1 less as one breaks
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 2
+            - !type:DeleteEntity {}
+            
+    - node: organs
+      edges:
+        - to: finished
+          steps:
+          - tag: MedicalDummyOrgan 
+            icon:           
+              sprite: Mobs/Species/Human/organs.rsi
+              state: heart-on
+            name: "medical dummy core"
+            doAfter: 2
+            
+          - tool: Welding
+            doAfter: 3
+            
+        - to: wiring
+          steps:
+            - tool: Cutting
+              doAfter: 3
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel
+              amount: 2 
+            - !type:SpawnPrototype
+              prototype: CableApcStack1
+              amount: 3
+              #Its probably easier to cut cables when unwiring everything, so some are going to get lost  
+        
+        
+    - node: finished
+      entity: MedicalDummyBase
+      edges:
+        - to: start
+          steps:
+          - tool: Prying
+            doAfter: 5
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 3 #returns 1 less as one breaks
+            - !type:DeleteEntity {}
+         
+              

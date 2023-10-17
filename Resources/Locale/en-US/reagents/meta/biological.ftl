@@ -18,3 +18,6 @@ reagent-desc-fat = No matter how it was obtained, its application is important.
 
 reagent-name-vomit = vomit
 reagent-desc-vomit = You can see a few chunks of someones last meal in it.
+
+reagent-name-synthblood = synthetic blood
+reagent-desc-synthblood = A substance used in the complex inner workings of Medical Training Dummies.
