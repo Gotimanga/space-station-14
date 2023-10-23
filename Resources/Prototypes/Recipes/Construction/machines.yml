@@ -151,15 +151,3 @@
   conditions:
     - !type:WallmountCondition
 
-- type: construction
-  name: Medical Dummy
-  id: MedDummy
-  graph: MedDummy
-  startNode: start
-  targetNode: finished
-  category: construction-category-storage
-  description: "A medical dummy"
-  icon: 
-    sprite: Mobs/Species/Human/Parts.rsi 
-    state: full
-  ojectType: entity    

@@ -1,21 +1,10 @@
 - type: constructionGraph
   id: MedDummy
   start: start
-  graph:
+  graph:  
+    
     - node: start
-      edges:
-        - to: wiring
-          steps:
-            - material: Steel
-              amount: 4
-              doAfter: 3
-            - material: Cloth
-              amount: 3
-              doAfter: 3
-    
-    
-    - node: wiring
-      entity: MedDummyPartial
+      entity: MedDummyFrame
       edges:
         - to: organs
           steps:
@@ -28,23 +17,11 @@
               
             - tool: Screwing
               doAfter: 3
-              
-        - to: start
-          steps:
-            - tool: Prying
-              doAfter: 5
-          completed:
-            - !type:SpawnPrototype
-              prototype: SheetSteel
-              amount: 4 #returns 1 less as one breaks
-            - !type:SpawnPrototype
-              prototype: MaterialCloth1
-              amount: 2
-            - !type:DeleteEntity {}
             
     - node: organs
+      entity: MedDummyFrame
       edges:
-        - to: finished
+        - to: complete
           steps:
           - tag: MedicalDummyOrgan 
             icon:           
@@ -56,7 +33,7 @@
           - tool: Welding
             doAfter: 3
             
-        - to: wiring
+        - to: start
           steps:
             - tool: Cutting
               doAfter: 3
@@ -70,17 +47,17 @@
               #Its probably easier to cut cables when unwiring everything, so some are going to get lost  
         
         
-    - node: finished
+    - node: complete
       entity: MedicalDummyBase
       edges:
-        - to: start
+        - to: organs
           steps:
           - tool: Prying
             doAfter: 5
           completed:
             - !type:SpawnPrototype
-              prototype: MaterialWoodPlank1
-              amount: 3 #returns 1 less as one breaks
-            - !type:DeleteEntity {}
+              prototype: MedicalDummyCore
+              amount: 1
+           
          
               

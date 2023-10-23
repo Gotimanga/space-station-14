@@ -203,3 +203,12 @@
   completetime: 4
   materials:
     Plastic: 400
+    
+- type: latheRecipe
+  id: MedicalDummyCore
+  result: MedicalDummyCore
+  completetime: 4
+  materials:
+    Plastic: 400
+    Steel: 200
+    Glass: 200

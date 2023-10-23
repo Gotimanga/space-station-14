@@ -4,7 +4,7 @@
   root: torso
   slots:
     torso:
-      part: TorsoHuman
+      part: MedDummyFrame
       organs:
-        heart: PracticeOrganMain
+        heart: MedicalDummyCore
         lung: PracticeOrganLung

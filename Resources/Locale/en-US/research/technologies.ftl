@@ -20,6 +20,7 @@ research-technology-advanced-tools = Advanced Tools
 research-technology-super-powercells = Super Powercells
 research-technology-bluespace-storage = Bluespace Storage
 
+research-technology-medical-dummy = Advanced Medical Training
 research-technology-chemistry = Chemistry
 research-technology-surgical-tools = Surgical Tools
 research-technology-biochemical-stasis = Biochemical Stasis

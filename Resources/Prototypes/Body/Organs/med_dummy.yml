@@ -1,5 +1,5 @@
 ﻿- type: entity
-  id: PracticeOrganMain
+  id: MedicalDummyCore
   parent: BaseHumanOrgan
   name: Medical Dummy Core
   description: "The core of a medical dummy. This simulates thow an average humanoid would react to medicines."

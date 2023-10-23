@@ -16,6 +16,21 @@
   - ChemicalPayload
   - ClothingEyesGlassesChemical
   - Jug
+  
+- type: technology
+  id: MedDummy
+  name: research-technology-medical-dummy
+  icon: 
+    #Please remember to replace this...
+    sprite: Mobs/Species/Human/Parts.rsi
+    state: full  
+  discipline: Biochemical
+  tier: 1
+  #I'd put it in tier two, but I want medics to have easier access to this due to how rarely biochemical is chosen
+  cost: 5000
+  recipeUnlocks:
+  - MedicalDummyCore
+  - MedDummyFrame
 
 - type: technology
   id: SurgicalTools

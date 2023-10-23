@@ -43,22 +43,38 @@
     name: Medical Dummy
     description: "A medical dummy"
     graph: MedDummy
-    node: start
+    node: complete
     #Add more to this. For now I'll leave it to implement more functionality. 
     
     
 - type: entity
-  id: MedDummyPartial
-  name:  Partially Completed Medical Dummy
-  description: "A half made medical dummy. It seems to be lacking any internal components."
+  id: MedDummyFrame
+  name: Medical Dummy Frame
+  description: "The foundations of a medical dummy."
   components:
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
-    sprite: Mobs/Species/Human/Parts.rsi
-    state: "full"
+    sprite: Objects/Specific/Robotics/cyborg_parts.rsi
+    state: robo_suit
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 100
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+        restitution: 0.3
+        friction: 0.2
   - type: Physics
   - type: Pullable
+  - type: BodyPart
+    partType: Torso
+    #Forgive me for my sins
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -72,4 +88,5 @@
         acts: ["Destruction"]
   - type: Construction
     graph: MedDummy
-    node: wiring
+    node: start
+    defaultTarget: complete

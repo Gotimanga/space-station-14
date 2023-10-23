@@ -266,6 +266,7 @@
       - WelderExperimental
       - JawsOfLife
       - ClothingEyesGlassesChemical
+      - MedicalDummyCore
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ExplosivePayload
@@ -481,6 +482,7 @@
     - HamtrLLeg
     - HamtrRLeg
     - VimHarness
+    - MedDummyFrame
   - type: MaterialStorage
     whitelist:
       tags:
